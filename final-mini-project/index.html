@@ -1,11 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chandan React App</title>
+    <title>Waste 2 Best</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@300;400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                900: '#0f172a',
+                800: '#1e293b',
+                700: '#334155',
+              },
+              neon: {
+                400: '#22d3ee', // Cyan
+                500: '#06b6d4',
+              }
+            },
+            fontFamily: {
+              brand: ['Audiowide', 'cursive'],
+              body: ['Poppins', 'sans-serif'],
+              tech: ['Rajdhani', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pop-in': 'popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              popIn: {
+                '0%': { opacity: '0', transform: 'scale(0.8) translateY(20px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* CSS Diamond Pattern */
+      .diamond-pattern {
+        background-image: linear-gradient(45deg, #1e293b 25%, transparent 25%), 
+                          linear-gradient(-45deg, #1e293b 25%, transparent 25%), 
+                          linear-gradient(45deg, transparent 75%, #1e293b 75%), 
+                          linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+        background-size: 40px 40px;
+        background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-dark-900 text-white antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
